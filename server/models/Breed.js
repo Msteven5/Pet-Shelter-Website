@@ -2,7 +2,11 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const birdBreedSchema = new Schema({
+const breedSchema = new Schema({
+    animalType: {
+        type: String,
+        required: true
+    },
     breedName: {
         type: String,
         required: true,
@@ -18,10 +22,10 @@ const birdBreedSchema = new Schema({
     hypoallergenic: {
         type: Boolean,
         required: true,
-        default: true
+        default: false
     }
 });
 
-const BirdBreed = mongoose.model('BirdBreed', birdBreedSchema)
+const Breed = mongoose.model('Breed', breedSchema)
 
-module.exports = BirdBreed;
+module.exports = Breed;

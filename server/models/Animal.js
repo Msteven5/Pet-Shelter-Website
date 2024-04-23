@@ -2,17 +2,21 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const catSchema = new Schema({
+const animalSchema = new Schema({
     name: {
         type: String,
         required: true,
         default: "Unknown"
     },
-    breed: {
-        type: Schema.Types.ObjectId,
-        ref: 'CatBreed',
+    animalType: {
+        type: String,
         required: true
     },
+    breed: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Breed',
+        required: true
+    }],
     image: {
         type: String,
         required: true,
@@ -36,7 +40,7 @@ const catSchema = new Schema({
         type: String,
         required: true
     },
-    furColor: {
+    color: {
         type: String,
         required: true,
         default: "Unknown"
@@ -55,9 +59,13 @@ const catSchema = new Schema({
         type: String,
         required: true,
         default: "Available"
+    },
+    saved: {
+        type: Boolean,
+        default: false
     }
 });
 
-const Cat = mongoose.model('Cat', catSchema)
+const Animal = mongoose.model('Animal', animalSchema)
 
-module.exports = Cat;
+module.exports = Animal;

@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const foodSchema = new Schema({
+const productSchema = new Schema({
     name: {
         type: String,
         required: true
     },
-    type: {
+    productType: {
         type: String,
         required: true
     },
@@ -23,9 +23,14 @@ const foodSchema = new Schema({
         type: Number,
         required: true,
         default: 0
+    },
+    inCart: {
+        type: Boolean,
+        required: true,
+        default: false
     }
 });
 
-const Food = mongoose.model('Food', foodSchema)
+const Product = mongoose.model('Product', productSchema)
 
-module.exports = Food;
+module.exports = Product;
