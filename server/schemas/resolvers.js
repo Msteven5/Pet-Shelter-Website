@@ -24,7 +24,8 @@ const resolvers = {
         },
         getSingleAnimal: async (_, { _id }) => {
             try {
-                const animal = await Animal.findBy_Id(_id);
+                const animal = await Animal.findById(_id)
+                    .populate('breed');
                 if (!animal) {
                     throw new Error('Animal not found.');
                 }
@@ -51,7 +52,7 @@ const resolvers = {
         },
         getSingleProduct: async (_, { _id }) => {
             try {
-                const product = await Product.findBy_Id(_id);
+                const product = await Product.findById(_id);
                 if (!product) {
                     throw new Error('Product not found.');
                 }
@@ -67,7 +68,7 @@ const resolvers = {
                 throw new Error('Failed to fetch breed.');
             }
         },
-        getBreedByType: async (_, { animalType }) => {
+        getBreedsByType: async (_, { animalType }) => {
             try {
                 const breed = await Breed.find({ animalType })
                 return breed;
@@ -78,7 +79,7 @@ const resolvers = {
         },
         getSingleBreed: async (_, { _id }) => {
             try {
-                const breed = await Breed.findBy_Id(_id);
+                const breed = await Breed.findById(_id);
                 if (!breed) {
                     throw new Error('Breed not found.');
                 }
@@ -96,7 +97,7 @@ const resolvers = {
         },
         getSingleUser: async (_, { _id }) => {
             try {
-                const user = await User.findBy_Id(_id);
+                const user = await User.findById(_id);
                 if (!user) {
                     throw new Error('User not found');
                 }
@@ -107,38 +108,38 @@ const resolvers = {
         }
     },
     Mutation: {
-        createUser: async (_, args) => {
+        addUser: async (_, args) => {
             const user = await User.create(args);
             const token = signToken(user);
             return { token, user };
         },
         loginUser: async (_, { email, password }) => {
             try {
-              const user = await User.findOne({ email });
-              if (!user) {
-                throw new Error('User not found');
-              }
-      
-              if (password === user.password) {
+                const user = await User.findOne({ email });
+                if (!user) {
+                    throw new Error('User not found');
+                }
+
+                if (password === user.password) {
+                    const token = signToken(user);
+                    return { token, user };
+                }
+
+                const passwordMatch = await bcrypt.compare(password, user.password);
+                if (!passwordMatch) {
+                    throw new Error('Incorrect password');
+                }
+
                 const token = signToken(user);
                 return { token, user };
-              }
-      
-              const passwordMatch = await bcrypt.compare(password, user.password);
-              if (!passwordMatch) {
-                throw new Error('Incorrect password');
-              }
-      
-              const token = signToken(user);
-              return { token, user };
             } catch (error) {
-              throw new AuthenticationError('Login failed');
+                throw new AuthenticationError('Login failed');
             }
-          },
+        },
         updateUser: async (_, { _id, user }) => {
             updateFields = {}
             try {
-                const { firstName, lastName, email, password  } = user
+                const { firstName, lastName, email, password } = user
 
                 if (firstName !== undefined) updateFields.firstName = firstName;
                 if (lastName !== undefined) updateFields.lastName = lastName;

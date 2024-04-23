@@ -2,10 +2,10 @@ import { gql } from '@apollo/client';
 
 export const ADD_USER = gql`
   mutation AddUser(
-    $firstName: String!
-    $lastName: String!
-    $email: String!
-    $password: String!
+    $firstName: String
+    $lastName: String
+    $email: String
+    $password: String
   ) {
     addUser(
       firstName: $firstName
@@ -22,7 +22,7 @@ export const ADD_USER = gql`
 `;
 
 export const LOGIN_USER = gql`
-mutation LoginUser($email: String!, $password: String!) {
+mutation LoginUser($email: String, $password: String) {
   loginUser(email: $email, password: $password) {
     token
     user {
@@ -36,11 +36,11 @@ mutation LoginUser($email: String!, $password: String!) {
 
 export const UPDATE_USER = gql`
   mutation UpdateUser(
-    $_id: ID!
-    $firstName: String!
-    $lastName: String!
-    $email: String!
-    $password: String!
+    $_id: ID
+    $firstName: String
+    $lastName: String
+    $email: String
+    $password: String
   ) {
     updateUser(
       firstName: $firstName
@@ -60,7 +60,7 @@ export const UPDATE_USER = gql`
 `;
 
 export const ADD_ANIMAL = gql`
-  mutation AddAnimal($animal: AnimalData!) {
+  mutation AddAnimal($animal: AnimalData) {
     addAnimal(animal: $animal) {
         _id
         name
@@ -81,7 +81,7 @@ export const ADD_ANIMAL = gql`
 `;
 
 export const UPDATE_ANIMAL = gql`
-  mutation UpdateAnimal($_id: ID!, $animal: AnimalData!) {
+  mutation UpdateAnimal($_id: ID, $animal: AnimalData) {
     updateAnimal(_id: $_id, animal: $animal) {
         _id
         name
@@ -102,7 +102,7 @@ export const UPDATE_ANIMAL = gql`
 `;
 
 export const DELETE_ANIMAL = gql`
-  mutation DeleteAnimal($_id: ID!) {
+  mutation DeleteAnimal($_id: ID) {
     deleteAnimal(_id: $_id) {
         _id
     }
@@ -123,7 +123,7 @@ export const ADD_BREED = gql`
 `;
 
 export const UPDATE_BREED = gql`
-  mutation UpdateBreed($_id: ID!, $breed: BreedData!) {
+  mutation UpdateBreed($_id: ID, $breed: BreedData) {
     updateBreed(_id: $_id, breed: $breed) {
         _id
         animalType
@@ -136,7 +136,7 @@ export const UPDATE_BREED = gql`
 `;
 
 export const ADD_PRODUCT = gql`
-  mutation AddProduct($product: ProductData!) {
+  mutation AddProduct($product: ProductData) {
     addProduct(product: $product) {
         _id
         name
@@ -150,7 +150,7 @@ export const ADD_PRODUCT = gql`
 `;
 
 export const UPDATE_PRODUCT = gql`
-  mutation UpdateProduct($_id: ID!, $product: ProductData!) {
+  mutation UpdateProduct($_id: ID, $product: ProductData) {
     UpdateProduct(_id: $_id, product: $product) {
         _id
         name
@@ -164,7 +164,7 @@ export const UPDATE_PRODUCT = gql`
 `;
 
 export const DELETE_PRODUCT = gql`
-  mutation DeleteProduct($_id: ID!) {
+  mutation DeleteProduct($_id: ID) {
     deleteProduct(_id: $_id) {
         _id
     }

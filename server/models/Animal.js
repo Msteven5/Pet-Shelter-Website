@@ -5,59 +5,51 @@ const { Schema } = mongoose;
 const animalSchema = new Schema({
     name: {
         type: String,
-        required: true,
         default: "Unknown"
     },
     animalType: {
         type: String,
-        required: true
+        default: "Unknown"
     },
     breed: [{
         type: Schema.Types.ObjectId,
         ref: 'Breed',
-        required: true
+        default: "Unknown"
     }],
     image: {
         type: String,
-        required: true,
-        default: TBD
+        default: "Unknown"
     },
     weight: {
         type: String,
-        required: true,
         default: "Unknown"
     },
     sex: {
         type: String,
-        required: true
+        default: "Unknown"
     },
     age: {
         type: String,
-        required: true,
         default: "Unknown"
     },
     description: {
         type: String,
-        required: true
+        default: "Unknown"
     },
     color: {
         type: String,
-        required: true,
         default: "Unknown"
     },
     personality: [{
         type: String,
-        required: true,
         default: "Unknown"
     }],
     spayedNeutered: {
         type: Boolean,
-        required: true,
         default: true
     },
     available: {
         type: String,
-        required: true,
         default: "Available"
     },
     saved: {
