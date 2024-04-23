@@ -123,7 +123,7 @@ export const ADD_BREED = gql`
 `;
 
 export const UPDATE_BREED = gql`
-  mutation UpdateBreed($_id: ID!, $breed: BreedData) {
+  mutation UpdateBreed($_id: ID!, $breed: BreedData!) {
     updateBreed(_id: $_id, breed: $breed) {
         _id
         animalType
@@ -136,14 +136,37 @@ export const UPDATE_BREED = gql`
 `;
 
 export const ADD_PRODUCT = gql`
-  mutation AddProduct($breed: BreedData) {
-    addProduct(breed: $breed) {
+  mutation AddProduct($product: ProductData!) {
+    addProduct(product: $product) {
         _id
-        animalType
-        breedName
-        toyPreference
-        activityLevel
-        hypoallergenic
+        name
+        productType
+        description
+        price
+        quantity
+        inCart
+    }
+  }
+`;
+
+export const UPDATE_PRODUCT = gql`
+  mutation UpdateProduct($_id: ID!, $product: ProductData!) {
+    UpdateProduct(_id: $_id, product: $product) {
+        _id
+        name
+        productType
+        description
+        price
+        quantity
+        inCart
+    }
+  }
+`;
+
+export const DELETE_PRODUCT = gql`
+  mutation DeleteProduct($_id: ID!) {
+    deleteProduct(_id: $_id) {
+        _id
     }
   }
 `;
