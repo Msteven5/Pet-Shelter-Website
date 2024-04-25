@@ -1,3 +1,23 @@
+.lightBackground {
+    background-color: #56d0dd;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: #56d0dd;
+}
+
+.darkText {
+    color: #6182e9;
+}
+
+.darkBackground {
+    background-color: #6182e9;
+}
+
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
