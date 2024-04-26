@@ -9,7 +9,7 @@ const Home = () => {
             <div>
                 <main>
                     <div className="px-4 pb-4 text-center">
-                        <img className="d-block mx-auto mb-4" src={Logo} height="200px" />
+                        <img className="d-block mx-auto mb-4" src={Logo} height="300px" />
                         <h1 className="display-5 fw-bold lightText">Michael's Animal Rescue Agency</h1>
                         <div className="col-lg-6 mx-auto">
                             <p className="lead mb-4">A rescue agency dedicated to the wellbeing of all animals from house pets to farm animals. We are a modern rescue that nurtures young animals and sees to the comfort of our senior animals. Please look around and see if we have the right animal for you!</p>
@@ -20,7 +20,7 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className="b-example-divider"></div>
+                    <div className="b-example-divider bg-info"></div>
                     <div id="myCarousel" className="carousel slide" data-bs-ride="carousel">
                         <div className="carousel-indicators">
                             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" className="active"
@@ -74,7 +74,7 @@ const Home = () => {
                         </button>
                     </div>
 
-                    <div className="b-example-divider"></div>
+                    <div className="b-example-divider bg-info"></div>
 
                     <div className="container col-xxl-8 px-4 py-5">
                         <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
@@ -92,7 +92,7 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className="b-example-divider"></div>
+                    <div className="b-example-divider bg-info"></div>
 
                     <div className="container col-xl-10 col-xxl-8 px-4 py-5">
                         <div className="row align-items-center g-lg-5 py-5">
@@ -132,7 +132,7 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className="b-example-divider"></div>
+                    <div className="b-example-divider bg-info"></div>
 
                     <div className="container col-xxl-8 px-4 py-5">
                         <div className="row flex-lg-row align-items-center g-5 py-5">
@@ -150,7 +150,7 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className="b-example-divider"></div>
+                    <div className="b-example-divider bg-info"></div>
 
                     <div className="px-4 py-5 text-center">
                         <div className="py-5">
@@ -165,7 +165,7 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className="b-example-divider mb-0"></div>
+                    <div className="b-example-divider bg-info mb-0"></div>
                 </main>
             </div>
         </>

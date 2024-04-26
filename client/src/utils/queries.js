@@ -29,7 +29,7 @@ export const GET_ANIMALS = gql`
 `;
 
 export const GET_ANIMALS_BY_TYPE = gql`
-query GetAnimalsByType($animalType) {
+query GetAnimalsByType($animalType: String!) {
     getAnimalsByType(animalType: $animalType) {
         _id
         name
@@ -99,7 +99,7 @@ export const GET_PRODUCTS = gql`
 `;
 
 export const GET_PRODUCTS_BY_TYPE = gql`
-  query GetProductsByType($productType) {
+  query GetProductsByType($productType: String!) {
     getProductsByType(productType: $productType) {
         _id
         name
@@ -140,7 +140,7 @@ export const GET_BREEDS = gql`
 `;
 
 export const GET_BREEDS_BY_TYPE = gql`
-  query GetBreedsByType($animalType) {
+  query GetBreedsByType($animalType: String!) {
     getBreedsByType(animalType: $animalType) {
         _id
         animalType
