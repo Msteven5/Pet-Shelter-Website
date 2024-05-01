@@ -1,0 +1,9 @@
+#animalBG {
+    background-image: url('/images/flower.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.frontCard {
+    background-color: none !important;
+}

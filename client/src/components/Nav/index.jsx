@@ -19,12 +19,12 @@ function Nav() {
 
     <ul className="nav nav-pills justify-content-around p-2">
     <li className="nav-item">
-    <img className="d-block mx-auto" src={Logo} height="50px" />
+    <Link to='/'><img className="d-block mx-auto" src={Logo} height="50px" /></Link>
       </li>
       <li className="nav-item dropdown">
         <a className="nav-link dropdown-toggle text-decoration-none text-black" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Available Animals</a>
         <ul className="dropdown-menu">
-          <li><a className="dropdown-item" href="#">All Available Animals</a></li>
+        <Link to='/pets'><li><a className="dropdown-item" href="#">All Available Animals</a></li></Link>
           <li><a className="dropdown-item" href="#">Available Dogs/Puppies</a></li>
           <li><a className="dropdown-item" href="#">Available Cats/Kittens</a></li>
           <li><a className="dropdown-item" href="#">Available Birds</a></li>
@@ -36,6 +36,7 @@ function Nav() {
       <li className="nav-item dropdown">
         <a className="nav-link dropdown-toggle text-decoration-none text-black" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Pet Supplies</a>
         <ul className="dropdown-menu">
+        <Link to='/shop'><li><a className="dropdown-item" href="#">All Pet Supplies</a></li></Link>
           <li><a className="dropdown-item" href="#">Pet Food & Treats</a></li>
           <li><a className="dropdown-item" href="#">Pet Toys & Beds</a></li>
         </ul>

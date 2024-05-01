@@ -141,6 +141,7 @@ export const ADD_PRODUCT = gql`
         _id
         name
         productType
+        image
         description
         price
         quantity
@@ -155,6 +156,7 @@ export const UPDATE_PRODUCT = gql`
         _id
         name
         productType
+        image
         description
         price
         quantity

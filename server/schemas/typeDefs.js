@@ -29,6 +29,7 @@ const typeDefs = `
         _id: ID
         name: String
         productType: String
+        image: String
         description: String
         price: Float
         quantity: Int
@@ -90,6 +91,7 @@ const typeDefs = `
         _id: ID
         name: String
         productType: String
+        image: String
         description: String
         price: Float
         quantity: Int

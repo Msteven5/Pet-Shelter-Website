@@ -90,6 +90,7 @@ export const GET_PRODUCTS = gql`
         _id
         name
         productType
+        image
         description
         price
         quantity
@@ -104,6 +105,7 @@ export const GET_PRODUCTS_BY_TYPE = gql`
         _id
         name
         productType
+        image
         description
         price
         quantity
@@ -118,6 +120,7 @@ export const GET_SINGLE_PRODUCT = gql`
         _id
         name
         productType
+        image
         description
         price
         quantity

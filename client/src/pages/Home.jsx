@@ -2,6 +2,7 @@ import './home.css'
 import Logo from '/images/animal shelter logo1.jpg'
 import PetandOwner from '/images/dogandowner1.jpg'
 import KidWithHorse from '/images/kidwithhorses.jpg'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
     return (
@@ -14,7 +15,9 @@ const Home = () => {
                         <div className="col-lg-6 mx-auto">
                             <p className="lead mb-4">A rescue agency dedicated to the wellbeing of all animals from house pets to farm animals. We are a modern rescue that nurtures young animals and sees to the comfort of our senior animals. Please look around and see if we have the right animal for you!</p>
                             <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                            <button type="button" className="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">Available Animals</button>
+                                <Link to='/pets'>
+                                    <button type="button" className="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">Available Animals</button>
+                                </Link>
                                 <button type="button" className="btn btn-outline-secondary btn-lg px-4">Donate</button>
                             </div>
                         </div>
@@ -37,7 +40,9 @@ const Home = () => {
                                     <div className="carousel-caption text-start">
                                         <h1 className='text-white'>A Fully Inclusive Animal Rescue</h1>
                                         <p>We welcome all types of animals and create a calming environment so everyone is at their best for adoption.</p>
-                                        <p><a className="btn btn-md gold-background text-light btn-dark" href="/Booking">Available Animals</a></p>
+                                            <Link to='/pets'>
+                                        <p><a className="btn btn-md gold-background text-light btn-dark">Available Animals</a></p>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -85,7 +90,7 @@ const Home = () => {
                                 <h1 className="display-5 fw-bold lh-1 mb-3">We Do Our Best To Keep You Informed</h1>
                                 <p className="lead">Every animal we offer has personality traits we've observed to help you make the best decision for yourself and your future "fur-ever" pet. Need an animal that's good with other pets? Or one that doesn't require a lot of excersize? All things that will be answered on each pet's profile!</p>
                                 <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-                                <button type="button" className="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">Available Animals</button>
+                                    <button type="button" className="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">Available Animals</button>
                                     <button type="button" className="btn btn-outline-secondary btn-lg px-4">Volunteer</button>
                                 </div>
                             </div>
@@ -102,7 +107,7 @@ const Home = () => {
                             </div>
                             <div className="col-md-10 mx-auto col-lg-5">
                                 <form className="p-4 p-md-5 border rounded-3 bg-body-tertiary">
-                                <h5 className='text-center darkText fs-6 mb-3'>* We Won't Send You Obnoxious Spam Emails, We Promise! *</h5>
+                                    <h5 className='text-center darkText fs-6 mb-3'>* We Won't Send You Obnoxious Spam Emails, We Promise! *</h5>
                                     <div className="form-floating mb-3">
                                         <input type="firstName" className="form-control" id="floatingFirst" placeholder="First Name" />
                                         <label for="floatingFirst">First Name</label>
@@ -143,7 +148,7 @@ const Home = () => {
                                 <h1 className="display-5 fw-bold lh-1 mb-3">We're More Than Just Your Typical House Pets</h1>
                                 <p className="lead">At Michael's Animal Rescue Agency, we take in all kinds of animals from cats to cows. If you're looking for a new addition to your farm family, we may just have the one for you!</p>
                                 <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-                                <button type="button" className="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">Available Farm Animals</button>
+                                    <button type="button" className="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">Available Farm Animals</button>
                                     <button type="button" className="btn btn-outline-secondary btn-lg px-4">Pet Care Instructions</button>
                                 </div>
                             </div>

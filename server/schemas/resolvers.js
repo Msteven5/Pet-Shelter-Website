@@ -269,13 +269,14 @@ const resolvers = {
         },
         addProduct: async (_, { product }) => {
 
-            const { name, productType, description, price, quantity, inCart } = product
+            const { name, productType, description, image, price, quantity, inCart } = product
 
             try {
 
                 const newProduct = await Product.create({
                     name,
                     productType,
+                    image,
                     description,
                     price,
                     quantity,
@@ -297,6 +298,7 @@ const resolvers = {
 
                 if (name !== undefined) updateFields.name = name;
                 if (productType !== undefined) updateFields.productType = productType;
+                if (image !== undefined) updateFields.image = image;
                 if (description !== undefined) updateFields.description = description;
                 if (price !== undefined) updateFields.price = price;
                 if (quantity !== undefined) updateFields.quantity = quantity;
