@@ -283,7 +283,7 @@ db.once('open', async () => {
             },
             {
                 name: "Shadow",
-                animalType: "Horse",
+                animalType: "Farm-Animal",
                 breed: breeds.find(breed => breed.breedName === 'Standardbred')._id,
                 image: "grayHorse.jpg",
                 weight: "1200 lbs",
@@ -295,7 +295,7 @@ db.once('open', async () => {
             },
             {
                 name: "Spirit",
-                animalType: "Horse",
+                animalType: "Farm-Animal",
                 breed: breeds.find(breed => breed.breedName === 'Mustang')._id,
                 image: "mustang1.jpg",
                 weight: "1000 lbs",
@@ -307,7 +307,7 @@ db.once('open', async () => {
             },
             {
                 name: "Lightning",
-                animalType: "Horse",
+                animalType: "Farm-Animal",
                 breed: breeds.find(breed => breed.breedName === 'Standardbred')._id,
                 image: "kidwithhorse2.jpg",
                 weight: "1100 lbs",
@@ -319,7 +319,7 @@ db.once('open', async () => {
             },
             {
                 name: "Molly",
-                animalType: "Cow",
+                animalType: "Farm-Animal",
                 breed: breeds.find(breed => breed.breedName === 'Jersey')._id,
                 image: "brownCow.jpg",
                 weight: "1200 lbs",
@@ -331,7 +331,7 @@ db.once('open', async () => {
             },
             {
                 name: "Buddy",
-                animalType: "Cow",
+                animalType: "Farm-Animal",
                 breed: breeds.find(breed => breed.breedName === 'Jersey')._id,
                 image: "cow1.jpg",
                 weight: "1100 lbs",

@@ -18,17 +18,17 @@ function Nav() {
     </ul>
 
     <ul className="nav nav-pills justify-content-around p-2">
-    <li className="nav-item">
-    <Link to='/'><img className="d-block mx-auto" src={Logo} height="50px" /></Link>
+      <li className="nav-item">
+        <Link to='/'><img className="d-block mx-auto" src={Logo} height="50px" /></Link>
       </li>
       <li className="nav-item dropdown">
         <a className="nav-link dropdown-toggle text-decoration-none text-black" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Available Animals</a>
         <ul className="dropdown-menu">
-        <Link to='/pets'><li><a className="dropdown-item" href="#">All Available Animals</a></li></Link>
-          <li><a className="dropdown-item" href="#">Available Dogs/Puppies</a></li>
-          <li><a className="dropdown-item" href="#">Available Cats/Kittens</a></li>
-          <li><a className="dropdown-item" href="#">Available Birds</a></li>
-          <li><a className="dropdown-item" href="#">Available Farm Animals</a></li>
+          <Link to='/pets'><li><a className="dropdown-item" href="#">All Available Animals</a></li></Link>
+          <li><Link to='/pets/Dog' className="dropdown-item" href="#">Available Dogs/Puppies</Link></li>
+          <li><Link to='/pets/Cat' className="dropdown-item" href="#">Available Cats/Kittens</Link></li>
+          <li><Link to='/pets/Bird' className="dropdown-item" href="#">Available Birds</Link></li>
+          <li><Link to='/pets/Farm-Animal' className="dropdown-item" href="#">Available Farm Animals</Link></li>
           <li><hr className="dropdown-divider" /></li>
           <li><a className="dropdown-item" href="#">Adoption Form</a></li>
         </ul>
@@ -36,9 +36,11 @@ function Nav() {
       <li className="nav-item dropdown">
         <a className="nav-link dropdown-toggle text-decoration-none text-black" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Pet Supplies</a>
         <ul className="dropdown-menu">
-        <Link to='/shop'><li><a className="dropdown-item" href="#">All Pet Supplies</a></li></Link>
-          <li><a className="dropdown-item" href="#">Pet Food & Treats</a></li>
-          <li><a className="dropdown-item" href="#">Pet Toys & Beds</a></li>
+          <Link to='/shop'><li><a className="dropdown-item" href="#">All Pet Supplies</a></li></Link>
+          <li><Link to='/shop/Food' className="dropdown-item" href="#">Pet Food</Link></li>
+          <li><Link to='/shop/Treats' className="dropdown-item" href="#">Pet Treats</Link></li>
+          <li><Link to='/shop/Beds' className="dropdown-item" href="#">Pet Beds</Link></li>
+          <li><Link to='/shop/Toys' className="dropdown-item" href="#">Pet Toys</Link></li>
         </ul>
       </li>
       <li className="nav-item dropdown">

@@ -8,9 +8,10 @@ import Home from './pages/Home.jsx';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Products from './pages/Products.jsx'
-import ProductDetail from './pages/ProductDetail';
+import ProductByType from './pages/ProductByType.jsx'
 import Animal from './pages/Animal';
 import AnimalDetail from './pages/AnimalDetail';
+import AnimalByType from './pages/AnimalByType.jsx'
 import Admin from './pages/Admin.jsx'
 
 const router = createBrowserRouter([
@@ -32,14 +33,17 @@ const router = createBrowserRouter([
       }, {
         path: '/shop',
         element: <Products />
-      },{
-        path: '/shop/:id',
-        element: <ProductDetail />
       }, {
+        path: '/shop/:type',
+        element: <ProductByType />
+      },{
         path: '/pets',
         element: <Animal />
       }, {
-        path: '/pets/:id',
+        path: '/pets/:type',
+        element: <AnimalByType />
+      }, {
+        path: '/pet/:id',
         element: <AnimalDetail />
       }, {
         path: '/admin_only',

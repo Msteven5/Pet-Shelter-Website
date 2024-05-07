@@ -9,7 +9,7 @@ const Home = () => {
         <>
             <div>
                 <main>
-                    <div className="px-4 pb-4 text-center">
+                    <div className="px-4 pb-4 text-center" id='homeMain'>
                         <img className="d-block mx-auto mb-4" src={Logo} height="300px" />
                         <h1 className="display-5 fw-bold lightText">Michael's Animal Rescue Agency</h1>
                         <div className="col-lg-6 mx-auto">
