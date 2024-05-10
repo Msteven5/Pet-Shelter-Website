@@ -17,10 +17,10 @@ const AnimalDetail = () => {
             <div className="container">
                 <div className="row mt-5">
 
-                    <img src={`/images/${animal.image}`} className="col mt-5 flex-grow-0 mx-auto" height="600px" alt={`picture of ${animal.animalType} named ${animal.name} and they're ${animal.color} `} />
+                    <img src={`/images/${animal.image}`} className="col mt-5 flex-grow-0 mx-auto" height="650px" alt={`picture of ${animal.animalType} named ${animal.name} and they're ${animal.color} `} />
 
                     <div key={animal._id} className="col" >
-                        <div className="card mt-5" style={{ width: '100%', height: '600px' }}>
+                        <div className="card mt-5" style={{ width: '100%', height: '650px' }}>
                             <div className="card-body text-center">
                                 <h1 className={animal.sex === "Male" ? "text-primary" : "pinkText"}>{animal.name}</h1>
                                 <div className='d-flex align-items-center h-50'>
@@ -30,6 +30,9 @@ const AnimalDetail = () => {
                             <ul className="list-group list-group-flush text-center">
                                 <li className="list-group-item">Sex: {animal.sex}</li>
                                 <li className="list-group-item">Breed: {animal.breed ? animal.breed.map(breed => breed.breedName).join(" / ") : "Unknown"}</li>
+                                <li className="list-group-item">Toy Preference: {animal.breed ? animal.breed.map(breed => breed.toyPreference).join(" / ") : "Unknown"}</li>
+                                <li className="list-group-item">Hypoallergenic: {animal.breed.hypoallergenic ? animal.breed.map(breed => JSON.stringify(breed.hypoallergenic)) : "Unknown"}</li>
+                                <li className="list-group-item">Activity Level: {animal.breed ? animal.breed.map(breed => breed.activityLevel).join(" / ") : "Unknown"}</li>
                                 <li className="list-group-item">Age: {animal.age}</li>
                                 <li className="list-group-item">Weight: {animal.weight}</li>
                                 <li className="list-group-item">Personality: {animal.personality ? animal.personality.map(trait => trait).join(" | ") : "Unknown"}</li>

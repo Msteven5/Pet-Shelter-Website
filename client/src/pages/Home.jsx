@@ -3,8 +3,47 @@ import Logo from '/images/animal shelter logo1.jpg'
 import PetandOwner from '/images/dogandowner1.jpg'
 import KidWithHorse from '/images/kidwithhorses.jpg'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { useMutation } from '@apollo/client'
+import { ADD_USER } from '../utils/mutations'
+import Auth from '../utils/auth'
 
 const Home = () => {
+
+
+    const [formState, setFormState] = useState({ email: '', password: '', firstName: '', lastName: '' });
+    const [addUser, { error }] = useMutation(ADD_USER);
+
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+        try {
+            const { data } = await addUser({
+                variables: {
+                    email: formState.email,
+                    password: formState.password,
+                    firstName: formState.firstName,
+                    lastName: formState.lastName,
+                },
+            });
+            const token = data.addUser.token;
+            Auth.login(token);
+        } catch (err) {
+            console.error(err);
+        }
+    };
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormState({
+            ...formState,
+            [name]: value,
+        });
+    };
+
+
+
+
+
     return (
         <>
             <div>
@@ -40,8 +79,8 @@ const Home = () => {
                                     <div className="carousel-caption text-start">
                                         <h1 className='text-white'>A Fully Inclusive Animal Rescue</h1>
                                         <p>We welcome all types of animals and create a calming environment so everyone is at their best for adoption.</p>
-                                            <Link to='/pets'>
-                                        <p><a className="btn btn-md gold-background text-light btn-dark">Available Animals</a></p>
+                                        <Link to='/pets'>
+                                            <p><a className="btn btn-md gold-background text-light btn-dark">Available Animals</a></p>
                                         </Link>
                                     </div>
                                 </div>
@@ -106,23 +145,48 @@ const Home = () => {
                                 <p className="col-lg-10 fs-4">By creating an account, you can save animals to your profile for later adoption, as well as begin the process of adopting the animal of your choice!</p>
                             </div>
                             <div className="col-md-10 mx-auto col-lg-5">
-                                <form className="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+                                <form className="p-4 p-md-5 border rounded-3 bg-body-tertiary" onSubmit={handleFormSubmit}>
                                     <h5 className='text-center darkText fs-6 mb-3'>* We Won't Send You Obnoxious Spam Emails, We Promise! *</h5>
                                     <div className="form-floating mb-3">
-                                        <input type="firstName" className="form-control" id="floatingFirst" placeholder="First Name" />
-                                        <label for="floatingFirst">First Name</label>
+                                        <input 
+                                        name="firstName" 
+                                        className="form-control" 
+                                        id="firstName" 
+                                        placeholder="First Name"
+                                        onChange={handleChange}
+                                        required />
+                                        <label htmlFor="floatingFirst">First Name</label>
                                     </div>
                                     <div className="form-floating mb-3">
-                                        <input type="lastName" className="form-control" id="floatingLast" placeholder="Last Name" />
-                                        <label for="floatingLast">Last Name</label>
+                                        <input 
+                                        name="lastName" 
+                                        className="form-control" 
+                                        id="floatingLast" 
+                                        placeholder="Last Name"
+                                        onChange={handleChange}
+                                        required />
+                                        <label htmlFor="floatingLast">Last Name</label>
                                     </div>
                                     <div className="form-floating mb-3">
-                                        <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" />
-                                        <label for="floatingInput">Email address</label>
+                                        <input 
+                                        name="email"
+                                        className="form-control" 
+                                        id="floatingInput" 
+                                        placeholder="name@example.com"
+                                        onChange={handleChange}
+                                        required />
+                                        <label htmlFor="floatingInput">Email address</label>
                                     </div>
                                     <div className="form-floating mb-3">
-                                        <input type="password" className="form-control" id="floatingPassword" placeholder="Password" />
-                                        <label for="floatingPassword">Password</label>
+                                        <input 
+                                        type='password'
+                                        name="password" 
+                                        className="form-control" 
+                                        id="floatingPassword" 
+                                        placeholder="Password"
+                                        onChange={handleChange} 
+                                        required />
+                                        <label htmlFor="floatingPassword">Password</label>
                                     </div>
                                     <div className="checkbox mb-3">
                                         <label>

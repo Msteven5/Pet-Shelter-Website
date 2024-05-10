@@ -117,20 +117,29 @@ const typeDefs = `
     }
     
     type Mutation {
-        addUser(user: UserData): Auth                           #Add a new user
+        addUser(user: UserData): Auth                        #Add a new user
+
         loginUser(email: String, password: String): Auth     #Login function
+
         logout: String                                         #Logout function
+
         updateUser(_id: ID, user: UserData): Auth              #Update existing user info
 
         addAnimal(animal: AnimalData): Animal                   #Add a new animal
+
         updateAnimal(_id: ID, animal: AnimalData): Animal      #Update animal information
+
         deleteAnimal(_id: ID): Animal                          #Remove animal from the database
+
         
         addBreed(breed: BreedData): Breed                       #Add a new breed
+
         updateBreed(_id: ID, breed: BreedData): Breed          #Update breed information
         
         addProduct(product: ProductData): Product               #Add a new product
+
         updateProduct(_id: ID, product: ProductData): Product  #Update a products information
+        
         deleteProduct(_id: ID): Product                        #Remove product from the database
     }   
 `;
