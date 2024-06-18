@@ -1,9 +1,24 @@
 import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
 
 const AnimalList = ({_id, image, name, description, sex, breed, available}) => {
+
+    useEffect(() => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.href = `/images/${image}`;
+        link.as = 'image';
+        document.head.appendChild(link);
+
+        return () => {
+            document.head.removeChild(link);
+        };
+    }, [image]);
+    
+
     return (
         <div key={_id} className="col" >
-            <div className="card mb-4" style={{ width: '24rem', height: '550px' }}>
+            <div className="card mb-4 border border-2 border-black" style={{ width: '24rem', height: '560px' }}>
                 <img src={`/images/${image}`} className="card-img-top" height="250px" alt="..." />
                 <div className="card-body">
                     <h3 className={sex === "Male" ? "text-primary" : "pinkText"}>{name}</h3>

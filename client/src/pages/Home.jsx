@@ -19,10 +19,12 @@ const Home = () => {
         try {
             const { data } = await addUser({
                 variables: {
+                    user: {
                     email: formState.email,
                     password: formState.password,
                     firstName: formState.firstName,
                     lastName: formState.lastName,
+                    }
                 },
             });
             const token = data.addUser.token;
@@ -39,10 +41,6 @@ const Home = () => {
             [name]: value,
         });
     };
-
-
-
-
 
     return (
         <>
@@ -136,7 +134,7 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className="b-example-divider bg-info"></div>
+                    <div className="b-example-divider bg-info" id="signup"></div>
 
                     <div className="container col-xl-10 col-xxl-8 px-4 py-5">
                         <div className="row align-items-center g-lg-5 py-5">
@@ -195,6 +193,7 @@ const Home = () => {
                                     </div>
                                     <button className="w-100 btn btn-lg darkBackground text-white btn-primary" type="submit">Sign up</button>
                                     <hr className="my-4" />
+                                    <p className="text-body-secondary">Already have an account? <Link to='/login'>Click Here</Link> to login.</p>
                                     <small className="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
                                 </form>
                             </div>

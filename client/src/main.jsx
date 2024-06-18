@@ -2,17 +2,18 @@ import ReactDOM from 'react-dom/client'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './index.css'
 
-import App from './App.jsx'
+import App from './App'
 import Error from './pages/Error';
-import Home from './pages/Home.jsx';
+import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Products from './pages/Products.jsx'
-import ProductByType from './pages/ProductByType.jsx'
+import Products from './pages/Products'
+import ProductByType from './pages/ProductByType'
 import Animal from './pages/Animal';
 import AnimalDetail from './pages/AnimalDetail';
-import AnimalByType from './pages/AnimalByType.jsx'
-import Admin from './pages/Admin.jsx'
+import AnimalByType from './pages/AnimalByType'
+import Admin from './pages/Admin'
+import Profile from './pages/Profile'
 
 const router = createBrowserRouter([
   {
@@ -23,8 +24,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />
-      }
-      , {
+      }, {
         path: '/login',
         element: <Login />
       }, {
@@ -45,6 +45,9 @@ const router = createBrowserRouter([
       }, {
         path: '/pet/:id',
         element: <AnimalDetail />
+      },{
+        path: '/profile',
+        element: <Profile />
       }, {
         path: '/admin_only',
         element: <Admin />

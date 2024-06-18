@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
+import AnimalList from '../components/AnimalList'
 import { GET_ANIMALS_BY_TYPE } from '../utils/queries';
 import './animal.css'
 

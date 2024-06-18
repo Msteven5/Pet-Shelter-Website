@@ -330,16 +330,16 @@ db.once('open', async () => {
                 personality: ["Gentle and affectionate nature.", "Enjoys grazing in the pasture.", "Loyal to her herdmates.", "Intelligent and observant."]
             },
             {
-                name: "Buddy",
+                name: "Princess",
                 animalType: "Farm-Animal",
                 breed: breeds.find(breed => breed.breedName === 'Jersey')._id,
                 image: "cow1.jpg",
                 weight: "1100 lbs",
-                sex: "Male",
+                sex: "Female",
                 age: "5 Years Old",
-                description: "A handsome Jersey bull with a muscular build and a calm disposition.",
+                description: "A beautiful Jersey cow with a delicate build and a calm disposition.",
                 color: "Black and White",
-                personality: ["Strong and reliable.", "Enjoys grazing and resting.", "Protective of his herd.", "Gentle with humans."]
+                personality: ["Strong and reliable.", "Enjoys grazing and resting.", "Protective of her herd.", "Gentle with humans."]
             }
         ]
         const animals = await Animal.insertMany(animalData)

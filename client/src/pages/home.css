@@ -7,7 +7,7 @@ h2,
 h3,
 h4,
 h5 {
-    color: #56d0dd;
+    color: #6584e7;
 }
 
 .darkText {
@@ -101,13 +101,11 @@ h5 {
     }
 }
 
-/* Since positioning the image, we need to help out the caption */
 .carousel-caption {
     bottom: 3rem;
     z-index: 10;
 }
 
-/* Declare heights because of positioning of img element */
 .carousel-item {
     height: 32rem;
 }
@@ -157,5 +155,32 @@ h5 {
     #carousel2,
     #carousel3 {
         height: 450px;
+    }
+}
+
+.container2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.dog-treat {
+    position: absolute;
+    width: 40px;
+    height: 40px; 
+    background-image: url('./images/bone2.png'); /* Your dog treat image */
+    background-size: cover;
+    animation-name: fall;
+    animation-timing-function: linear;
+    z-index: -1;
+}
+
+@keyframes fall {
+    0% {
+        top: 10%;
+    }
+    100% {
+        top: 95%;
     }
 }

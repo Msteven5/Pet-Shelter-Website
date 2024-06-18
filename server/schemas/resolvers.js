@@ -108,10 +108,10 @@ const resolvers = {
         }
     },
     Mutation: {
-        addUser: async (_, args) => {
-            const user = await User.create(args);
-            const token = signToken(user);
-            return { token, user };
+        addUser: async (_, { user }) => {
+            const newUser = await User.create(user);
+            const token = signToken(newUser);
+            return { token, newUser };
         },
         loginUser: async (_, { email, password }) => {
             try {
@@ -290,7 +290,7 @@ const resolvers = {
         },
         updateProduct: async (_, { _id, product }) => {
 
-            const { name, productType, description, price, quantity, inCart } = product
+            const { name, productType, image, description, price, quantity, inCart } = product
 
             const updateFields = {}
 
