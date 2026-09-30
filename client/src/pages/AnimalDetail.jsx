@@ -34,11 +34,11 @@ const AnimalDetail = () => {
 
     return (
         <>
-            <div className="container">
+            <div className="container my-auto py-4 d-flex flex-column justify-content-center">
                 <Link to='/pets'>
-                    <button type="button" className="btn btn-outline-dark border-2 bg-info px-2 mt-4 me-sm-3 fw-bold">Back to Animals</button>
+                    <button type="button" className="btn btn-outline-dark border-2 bg-info px-2 me-sm-3 fw-bold">Back to Animals</button>
                 </Link>
-                <div className="row mt-3 d-flex align-items-center">
+                <div className="row d-flex align-items-center">
 
                     <img src={`/images/${animal.image}`} className="col border border-4 rounded-2 px-0 border-white flex-grow-0 mx-auto" height="550px" alt={`picture of ${animal.animalType} named ${animal.name} and they're ${animal.color} `} />
 
