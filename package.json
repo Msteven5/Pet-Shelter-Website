@@ -9,7 +9,6 @@
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
     "build": "cd client && npm run build",
-    "watch": "webpack-dev-server",
     "begin": "cd server && npm i && cd ../client && npm i && npm run build && cd ../server && npm run seed"
   },
   "keywords": [],
@@ -17,8 +16,6 @@
   "license": "ISC",
   "dependencies": {
     "concurrently": "^5.1.0",
-    "dotenv": "^16.4.5",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.0.2"
+    "dotenv": "^16.4.5"
   }
 }
